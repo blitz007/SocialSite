@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Log-In{% endblock %}
+
+{% block content %}
+	<h1>Log-In</h1>
+	<p>Please Use the folowing for to Log-In:</p>
+	<form action="." method="post">
+		{{ form.as_p }}
+		{% csrf_token %}
+		<p><input type="submit" value="Log-In"></p>
+	</form>
+
+	<p><a href="{% url "password_reset" %}">Forgotten your Password?</a></p>
+	
+	<div class="social">
+		<ul>
+			<li class="facebook"><a href="{% url "social:begin" "facebook" %}">Sign In with Facebook</a></li>
+		</ul>
+	</div>
+{% endblock %}
