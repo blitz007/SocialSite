@@ -16,7 +16,8 @@ class ImageCreateForm(forms.ModelForm):
 		url = self.cleaned_data['url']
 		valid_extensions= ['jpg','jpeg']
 		extension = url.rsplit('.',1)[1].lower()
-		if extension not in valid_extensions('The given URL is invalid.')
+		if extension not in valid_extensions:
+			('The given URL is invalid.')
 		return url
 
 	def save(self, force_insert=False,force_update=False,commit=True):
